@@ -1,15 +1,21 @@
 cask "snyvi" do
   arch arm: "aarch64", intel: "x86_64"
 
-  version "1.5.0"
-  sha256 arm:   "5d2fb8d760839e49e3f52ae08118d04c4dfc1b69718842d3c428d71b0a94dcb5",
-         intel: "a3e4a8c8d8307a116d2f16ea69c0da0e5ef2d63722750fbaefbfb2e8020ac8d8"
+  version "1.7.0"
+  sha256 arm:   "70fa652b8f29842fabbb3b26b49a9f08eb0670dfb9dfd744b23c85131811e1a3",
+         intel: "50f2452a22c6c96445de6fda502cbad7e5b0af5d09e9ee545b1064685ed10cf0"
 
   url "https://github.com/snymrova/snyvi/releases/download/v#{version}/snyvi-#{version}-#{arch}-apple-darwin.tar.gz",
       verified: "github.com/snymrova/snyvi/"
   name "snyvi"
   desc "Fast, beautiful viewer for the documents your agents produce"
   homepage "https://mrova.rocks/snyvi"
+
+  # The daemon updates the bundle itself, once a day, from the release's
+  # latest.json; what Chrome, VS Code and Slack say for the same reason.
+  # `brew upgrade` then leaves snyvi alone unless asked with --greedy, and
+  # a greedy upgrade only ever reinstalls a version the daemon already has.
+  auto_updates true
 
   depends_on macos: ">= :big_sur"
 
