@@ -1,9 +1,9 @@
 cask "snyvi" do
   arch arm: "aarch64", intel: "x86_64"
 
-  version "1.58.0"
-  sha256 arm:   "0462648abe8ef010b8e37eb8b1c403468dadc62db44e41353fd083eb3fc6577f",
-         intel: "8b90943cd2fba8083af1113679ddd5d9d986afdc00c312c906398fa49bb81af8"
+  version "1.58.1"
+  sha256 arm:   "61552bf0d80a0a56f7594eb772dd0c4ccfe9d46c1b4ce90447c5a5645409b031",
+         intel: "4bab0cc3a38e73dc66ab28e6343e50104ccafdc814ccecfa76b90cf6653bc799"
 
   url "https://github.com/snymrova/snyvi/releases/download/v#{version}/snyvi-#{version}-#{arch}-apple-darwin.tar.gz",
       verified: "github.com/snymrova/snyvi/"
